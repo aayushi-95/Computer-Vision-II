@@ -1,0 +1,10 @@
+clc;
+clear all;
+im = imread('Lego_helicopter.jpg');
+img = rgb2gray(im);
+% imi = rot90(im);
+check = imrotate(im,90);
+imgi = rot90(img);
+points = detectHarrisFeatures(imgi);
+imshow(check); hold on;
+plot(points.selectStrongest(50));
